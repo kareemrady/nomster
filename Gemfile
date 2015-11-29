@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 1.2'
 # Simple form
 
 gem 'simple_form'
+gem 'devise', '>= 3.2.4'
 gem 'will_paginate', '~> 3.0.5'
 
 group :doc do
