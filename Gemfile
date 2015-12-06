@@ -36,6 +36,7 @@ gem 'devise', '>= 3.2.4'
 gem 'will_paginate', '~> 3.0.5'
 gem 'geocoder'
 gem "figaro", ">= 1.0.0"
+gem "carrierwave"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
