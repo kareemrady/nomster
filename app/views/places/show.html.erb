@@ -22,16 +22,18 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add Photo</h4>
       </div>
+      <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
       <div class="modal-body">  
-          <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+          
           <%= f.input :caption, :class => "pull-left" %>
             <%= f.input :picture %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
            <%= f.submit 'Upload Photo' , :class => 'btn btn-primary pull-right' %>
-           <% end %>
+           
       </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -99,16 +101,17 @@ function initMap() {
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
+      <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
       <div class="modal-body">
-        <%= simple_form_for @comment, :url => place_comments_path(@place) do |f| %>
+        
           <%= f.input :message %>
           <%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <%= f.submit "Add Comment", :class => "btn btn-primary" %>
-        <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>

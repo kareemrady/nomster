@@ -10,9 +10,11 @@
 		<% end %>
 		<% if place.comments.present? %>
 <div class= "col-xs-12">
+<% if place.photos.present? %>
 	<div class = "col-xs-12">
 		<%= image_tag place.photos.first.picture %>
 	<div>
+	<% end %>
       <blockquote>
       <% if place.comments.last.humanized_rating.present? %>
         <b><%= place.comments.last.humanized_rating  %></b> -

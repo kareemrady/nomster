@@ -1,7 +1,9 @@
 class NotificationMailer < ActionMailer::Base
   default from: "no-reply@nomsterapp.com"
 
-  def comment_added
-  	mail(to: "kareem_rady@yahoo.com", subject: "A new comment added")
+  def comment_added(comment)
+  	@place = comment.place
+  	@place_owner = @place.user
+  	mail(to: @place_owner.email, subject: "A new comment added #{@place.name}")
   end
 end
