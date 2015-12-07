@@ -5,9 +5,14 @@
 		<p><%= place.description %></p><br />
 		<% if place.user.present? %>
 			<small><%= place.user.email %></small>
+			<br />
+			<br />
 		<% end %>
 		<% if place.comments.present? %>
 <div class= "col-xs-12">
+	<div class = "col-xs-12">
+		<%= image_tag place.photos.first.picture %>
+	<div>
       <blockquote>
       <% if place.comments.last.humanized_rating.present? %>
         <b><%= place.comments.last.humanized_rating  %></b> -
